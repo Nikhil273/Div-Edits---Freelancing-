@@ -1,87 +1,118 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
-import { Menu, X, Play, Star, Mail, Phone, Instagram, Youtube, Linkedin, ChevronDown, Send, Pause } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import {
+  Menu,
+  X,
+  Play,
+  Star,
+  Mail,
+  Phone,
+  Instagram,
+  Youtube,
+  Linkedin,
+  ChevronDown,
+  Send,
+  Pause,
+} from "lucide-react";
 
 export default function DarkPortfolio() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isVisible, setIsVisible] = useState(false)
-  const [hoveredVideo, setHoveredVideo] = useState<number | null>(null)
-  const [playingVideo, setPlayingVideo] = useState<number | null>(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hoveredVideo, setHoveredVideo] = useState<number | null>(null);
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   const handleVideoPlay = (index: number) => {
-    setPlayingVideo(index)
-  }
+    setPlayingVideo(index);
+  };
 
   const handleVideoPause = (index: number) => {
-    setPlayingVideo(null)
-  }
+    setPlayingVideo(null);
+  };
 
   const tools = [
-    { name: "Adobe Premiere Pro", icon: "Pr", color: "from-purple-500 to-pink-500" },
-    { name: "Adobe After Effects", icon: "Ae", color: "from-blue-500 to-purple-500" },
+    {
+      name: "Adobe Premiere Pro",
+      icon: "Pr",
+      color: "from-purple-500 to-pink-500",
+    },
+    {
+      name: "Adobe After Effects",
+      icon: "Ae",
+      color: "from-blue-500 to-purple-500",
+    },
     { name: "CapCut", icon: "CC", color: "from-green-500 to-blue-500" },
     { name: "Final Cut Pro", icon: "FC", color: "from-gray-500 to-gray-700" },
-    { name: "DaVinci Resolve", icon: "Da", color: "from-orange-500 to-red-500" },
-    { name: "VN", icon: "VN", color: "from-red-500 to-pink-500" },
-  ]
+    {
+      name: "DaVinci Resolve",
+      icon: "Da",
+      color: "from-orange-500 to-red-500",
+    },
+    { name: "PhotoShop", icon: "Ps", color: "from-red-500 to-pink-500" },
+  ];
 
   const portfolioItems = [
     {
-      title: "YouTube Short for Tech Channel",
-      views: "2.5M",
-      type: "Short",
-      videoSrc: "/videos/whatsapp-video-2025-06-06.mp4",
+      title: "YouTube Edits - A Home in Japan ",
+      views: "1.5M",
+      type: "Youtube Edits",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/aysbffegezxm5adfpd8y",
     },
     {
-      title: "Instagram Reel - Fashion Brand",
-      views: "1.8M",
-      type: "Reel",
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      title: "YouTube Edits  - Story of a Boy",
+      views: "1M",
+      type: "Youtube Edits",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/omfrqstsycruahgaoyq3",
     },
     {
       title: "Documentary Trailer",
       views: "500K",
       type: "Documentary",
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ydiiznojqcde9ryufacv",
     },
     {
       title: "Product Launch Video",
       views: "3.2M",
       type: "Commercial",
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/bii8nwjhsw36derutjt9",
     },
     {
       title: "Travel Vlog Highlights",
       views: "1.1M",
       type: "Vlog",
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/bapg9xerb6yqazmgft4w",
     },
     {
       title: "Music Video Edit",
       views: "800K",
       type: "Music",
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/p1mokpvggvdpt5jizuvb",
     },
-  ]
+  ];
 
   const testimonials = [
     {
@@ -90,15 +121,17 @@ export default function DarkPortfolio() {
       content:
         "Divyanshu's editing transformed my content completely. His attention to detail and quick turnaround time is unmatched.",
       rating: 5,
-      videoSrc: "/videos/whatsapp-video-2025-06-06.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ruopsqy9nagzhejxglfh",
     },
     {
-      name: "Sarah Martinez",
+      name: "Glow",
       role: "Brand Manager",
       content:
         "Working with Divyanshu has been incredible. He understands our vision instantly and delivers beyond expectations.",
       rating: 5,
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/uf1qje8uuvmdqhqexuy5",
     },
     {
       name: "Mike Johnson",
@@ -106,9 +139,37 @@ export default function DarkPortfolio() {
       content:
         "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
       rating: 5,
-      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/drdbaj3mbybo5low8ew9",
     },
-  ]
+    {
+      name: "Mike Johnson",
+      role: "Content Creator",
+      content:
+        "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
+      rating: 5,
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ocqqhp2hnykkrgxej2hm",
+    },
+    {
+      name: "Mike Johnson",
+      role: "Content Creator",
+      content:
+        "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
+      rating: 5,
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/uc6uq44dnah7drvrd4wf",
+    },
+    {
+      name: "Mike Johnson",
+      role: "Content Creator",
+      content:
+        "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
+      rating: 5,
+      videoSrc:
+        "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/m19lhrrzzhkb3nm4bset",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-[#121212] text-white">
@@ -203,7 +264,10 @@ export default function DarkPortfolio() {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
         {/* Background Animation */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#121212] via-[#1a1a1a] to-[#121212]">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,59,63,0.1),transparent_50%)]"></div>
@@ -211,19 +275,30 @@ export default function DarkPortfolio() {
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`transition-all duration-1000 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
           >
             <div className="max-w-4xl mx-auto">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 md:mb-8 leading-tight">
-                Hi, I'm <span className="text-[#FF3B3F]">Divyanshu</span> — a passionate video editor
+                Hi, I'm <span className="text-[#FF3B3F]">Divyanshu</span> — a
+                passionate video editor
               </h1>
               <div className="space-y-4 md:space-y-6 text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-12 leading-relaxed px-4">
                 <p>with a sharp eye for storytelling and visuals.</p>
-                <p>I specialize in editing short-form content, reels, and documentaries that truly engage audiences.</p>
                 <p>
-                  With experience across startups and creators, I bring ideas to life with precision and creativity.
+                  I specialize in editing short-form content, reels, and
+                  documentaries that truly engage audiences.
                 </p>
-                <p className="text-white font-medium">Let's collaborate and create something impactful.</p>
+                <p>
+                  With experience across startups and creators, I bring ideas to
+                  life with precision and creativity.
+                </p>
+                <p className="text-white font-medium">
+                  Let's collaborate and create something impactful.
+                </p>
               </div>
               <Button
                 size="lg"
@@ -258,9 +333,13 @@ export default function DarkPortfolio() {
                     <div
                       className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${tool.color} rounded-lg mx-auto mb-3 md:mb-4 flex items-center justify-center`}
                     >
-                      <span className="text-white font-bold text-lg md:text-xl">{tool.icon}</span>
+                      <span className="text-white font-bold text-lg md:text-xl">
+                        {tool.icon}
+                      </span>
                     </div>
-                    <h3 className="font-semibold text-white text-sm md:text-base">{tool.name}</h3>
+                    <h3 className="font-semibold text-white text-sm md:text-base">
+                      {tool.name}
+                    </h3>
                   </CardContent>
                 </Card>
               ))}
@@ -297,13 +376,15 @@ export default function DarkPortfolio() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         muted
                         loop
-                        playsInline
+                        autoPlay
                         preload="metadata"
                         onPlay={() => handleVideoPlay(index)}
                         onPause={() => handleVideoPause(index)}
                       />
                       <div
-                        className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${hoveredVideo === index ? "opacity-100" : "opacity-0"}`}
+                        className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${
+                          hoveredVideo === index ? "opacity-100" : "opacity-0"
+                        }`}
                       >
                         {playingVideo === index ? (
                           <Pause className="w-8 h-8 md:w-12 md:h-12 text-[#FF3B3F]" />
@@ -312,11 +393,17 @@ export default function DarkPortfolio() {
                         )}
                       </div>
                     </div>
-                    <Badge className="absolute top-3 right-3 bg-[#FF3B3F] text-white text-xs">{item.type}</Badge>
+                    <Badge className="absolute top-3 right-3 bg-[#FF3B3F] text-white text-xs">
+                      {item.type}
+                    </Badge>
                   </div>
                   <CardContent className="p-4 md:p-6">
-                    <h3 className="font-semibold text-white text-base md:text-lg mb-2">{item.title}</h3>
-                    <p className="text-gray-400 text-sm md:text-base">{item.views} views</p>
+                    <h3 className="font-semibold text-white text-base md:text-lg mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm md:text-base">
+                      {item.views} views
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -344,8 +431,10 @@ export default function DarkPortfolio() {
                       <video
                         className="w-full h-full object-cover"
                         controls
+                        muted
+                        loop
+                        autoPlay
                         preload="metadata"
-                        playsInline
                         src={testimonial.videoSrc}
                       >
                         Your browser does not support the video tag.
@@ -354,12 +443,17 @@ export default function DarkPortfolio() {
                         <Play className="w-12 h-12 text-[#FF3B3F]" />
                       </div>
                     </div>
-                    <Badge className="absolute top-3 right-3 bg-[#FF3B3F] text-white text-xs">Testimonial</Badge>
+                    <Badge className="absolute top-3 right-3 bg-[#FF3B3F] text-white text-xs">
+                      Testimonial
+                    </Badge>
                   </div>
                   <CardContent className="p-4 md:p-6">
                     <div className="flex mb-3">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-[#FF3B3F] text-[#FF3B3F]" />
+                        <Star
+                          key={i}
+                          className="w-4 h-4 fill-[#FF3B3F] text-[#FF3B3F]"
+                        />
                       ))}
                     </div>
                     <p className="text-gray-300 mb-4 text-sm md:text-base italic line-clamp-3">
@@ -367,11 +461,17 @@ export default function DarkPortfolio() {
                     </p>
                     <div className="flex items-center">
                       <div className="w-10 h-10 bg-gradient-to-r from-[#FF3B3F] to-pink-500 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-white font-bold text-sm">{testimonial.name.charAt(0)}</span>
+                        <span className="text-white font-bold text-sm">
+                          {testimonial.name.charAt(0)}
+                        </span>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-white text-sm md:text-base">{testimonial.name}</h4>
-                        <p className="text-gray-400 text-xs md:text-sm">{testimonial.role}</p>
+                        <h4 className="font-semibold text-white text-sm md:text-base">
+                          {testimonial.name}
+                        </h4>
+                        <p className="text-gray-400 text-xs md:text-sm">
+                          {testimonial.role}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -395,17 +495,22 @@ export default function DarkPortfolio() {
                   Ready to create something amazing?
                 </h3>
                 <p className="text-gray-300 mb-6 md:mb-8 leading-relaxed text-sm md:text-base">
-                  Whether you need a compelling YouTube video, engaging social media content, or a powerful documentary,
-                  I'm here to bring your vision to life with precision and creativity.
+                  Whether you need a compelling YouTube video, engaging social
+                  media content, or a powerful documentary, I'm here to bring
+                  your vision to life with precision and creativity.
                 </p>
                 <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   <div className="flex items-center space-x-3 md:space-x-4">
                     <Mail className="w-5 h-5 md:w-6 md:h-6 text-[#FF3B3F] flex-shrink-0" />
-                    <span className="text-gray-300 text-sm md:text-base break-all">divyanshu.editor@gmail.com</span>
+                    <span className="text-gray-300 text-sm md:text-base break-all">
+                      divyanshu.editor@gmail.com
+                    </span>
                   </div>
                   <div className="flex items-center space-x-3 md:space-x-4">
                     <Phone className="w-5 h-5 md:w-6 md:h-6 text-[#FF3B3F] flex-shrink-0" />
-                    <span className="text-gray-300 text-sm md:text-base">+91 98765 43210</span>
+                    <span className="text-gray-300 text-sm md:text-base">
+                      +91 7651979398
+                    </span>
                   </div>
                 </div>
                 <div>
@@ -437,14 +542,18 @@ export default function DarkPortfolio() {
                 <CardContent className="p-4 md:p-6">
                   <form className="space-y-4 md:space-y-6">
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-white">Name</label>
+                      <label className="block text-sm font-medium mb-2 text-white">
+                        Name
+                      </label>
                       <Input
                         placeholder="Your full name"
                         className="bg-[#1a1a1a] border-gray-600 text-white placeholder-gray-400 focus:border-[#FF3B3F] focus:ring-[#FF3B3F] text-sm md:text-base"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-white">Email</label>
+                      <label className="block text-sm font-medium mb-2 text-white">
+                        Email
+                      </label>
                       <Input
                         type="email"
                         placeholder="your.email@example.com"
@@ -452,7 +561,9 @@ export default function DarkPortfolio() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2 text-white">Message</label>
+                      <label className="block text-sm font-medium mb-2 text-white">
+                        Message
+                      </label>
                       <Textarea
                         placeholder="Tell me about your project, timeline, and vision..."
                         rows={4}
@@ -479,27 +590,44 @@ export default function DarkPortfolio() {
               <span className="text-white">Divyanshu</span>
               <span className="text-[#FF3B3F]">.</span>
             </div>
-            <p className="text-gray-400 mb-6">Video Editor | Storyteller | Creative Professional</p>
+            <p className="text-gray-400 mb-6">
+              Video Editor | Storyteller | Creative Professional
+            </p>
             <div className="flex justify-center space-x-6 mb-8">
-              <Link href="#" className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
+              >
                 <Youtube className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
+              >
                 <Instagram className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
+              >
                 <Linkedin className="w-6 h-6" />
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300">
+              <Link
+                href="#"
+                className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
+              >
                 <Mail className="w-6 h-6" />
               </Link>
             </div>
             <div className="border-t border-gray-800 pt-8">
-              <p className="text-gray-500">© {new Date().getFullYear()} Divyanshu Shukla. All rights reserved.</p>
+              <p className="text-gray-500">
+                © {new Date().getFullYear()} Divyanshu Shukla. All rights
+                reserved.
+              </p>
             </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
