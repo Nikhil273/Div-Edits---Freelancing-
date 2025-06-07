@@ -1,19 +1,19 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Menu, X, Play, Star, Mail, Phone, Instagram, Youtube, Linkedin, ChevronDown, Send } from "lucide-react"
+import { Menu, X, Play, Star, Mail, Phone, Instagram, Youtube, Linkedin, ChevronDown, Send, Pause } from "lucide-react"
 
 export default function DarkPortfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [hoveredVideo, setHoveredVideo] = useState<number | null>(null)
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null)
 
   useEffect(() => {
     setIsVisible(true)
@@ -27,6 +27,14 @@ export default function DarkPortfolio() {
     setIsMenuOpen(false)
   }
 
+  const handleVideoPlay = (index: number) => {
+    setPlayingVideo(index)
+  }
+
+  const handleVideoPause = (index: number) => {
+    setPlayingVideo(null)
+  }
+
   const tools = [
     { name: "Adobe Premiere Pro", icon: "Pr", color: "from-purple-500 to-pink-500" },
     { name: "Adobe After Effects", icon: "Ae", color: "from-blue-500 to-purple-500" },
@@ -37,12 +45,42 @@ export default function DarkPortfolio() {
   ]
 
   const portfolioItems = [
-    { title: "YouTube Short for Tech Channel", views: "2.5M", type: "Short" },
-    { title: "Instagram Reel - Fashion Brand", views: "1.8M", type: "Reel" },
-    { title: "Documentary Trailer", views: "500K", type: "Documentary" },
-    { title: "Product Launch Video", views: "3.2M", type: "Commercial" },
-    { title: "Travel Vlog Highlights", views: "1.1M", type: "Vlog" },
-    { title: "Music Video Edit", views: "800K", type: "Music" },
+    {
+      title: "YouTube Short for Tech Channel",
+      views: "2.5M",
+      type: "Short",
+      videoSrc: "/videos/whatsapp-video-2025-06-06.mp4",
+    },
+    {
+      title: "Instagram Reel - Fashion Brand",
+      views: "1.8M",
+      type: "Reel",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    },
+    {
+      title: "Documentary Trailer",
+      views: "500K",
+      type: "Documentary",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    },
+    {
+      title: "Product Launch Video",
+      views: "3.2M",
+      type: "Commercial",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    },
+    {
+      title: "Travel Vlog Highlights",
+      views: "1.1M",
+      type: "Vlog",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+    },
+    {
+      title: "Music Video Edit",
+      views: "800K",
+      type: "Music",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+    },
   ]
 
   const testimonials = [
@@ -50,22 +88,25 @@ export default function DarkPortfolio() {
       name: "Alex Chen",
       role: "YouTuber (1M+ subscribers)",
       content:
-        "Divyanshu's editing transformed my content completely. His attention to detail and quick turnaround time is unmatched. My engagement rates have doubled since working with him.",
+        "Divyanshu's editing transformed my content completely. His attention to detail and quick turnaround time is unmatched.",
       rating: 5,
+      videoSrc: "/videos/whatsapp-video-2025-06-06.mp4",
     },
     {
       name: "Sarah Martinez",
       role: "Brand Manager",
       content:
-        "Working with Divyanshu has been incredible. He understands our vision instantly and delivers beyond expectations. His creativity and reliability make him our go-to editor.",
+        "Working with Divyanshu has been incredible. He understands our vision instantly and delivers beyond expectations.",
       rating: 5,
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     },
     {
       name: "Mike Johnson",
       role: "Content Creator",
       content:
-        "Divyanshu brings stories to life with his exceptional editing skills. His work on our documentary series was phenomenal - professional, creative, and delivered on time every single time.",
+        "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
       rating: 5,
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
     },
   ]
 
@@ -252,16 +293,23 @@ export default function DarkPortfolio() {
                   <div className="relative">
                     <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
                       <video
-                        src={"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"}
-                        alt={item.title}
-                        width={300}
-                        height={200}
+                        src={item.videoSrc}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        onPlay={() => handleVideoPlay(index)}
+                        onPause={() => handleVideoPause(index)}
                       />
                       <div
                         className={`absolute inset-0 bg-black/60 flex items-center justify-center transition-opacity duration-300 ${hoveredVideo === index ? "opacity-100" : "opacity-0"}`}
                       >
-                        <Play className="w-8 h-8 md:w-12 md:h-12 text-[#FF3B3F]" />
+                        {playingVideo === index ? (
+                          <Pause className="w-8 h-8 md:w-12 md:h-12 text-[#FF3B3F]" />
+                        ) : (
+                          <Play className="w-8 h-8 md:w-12 md:h-12 text-[#FF3B3F]" />
+                        )}
                       </div>
                     </div>
                     <Badge className="absolute top-3 right-3 bg-[#FF3B3F] text-white text-xs">{item.type}</Badge>
@@ -295,14 +343,14 @@ export default function DarkPortfolio() {
                     <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 relative overflow-hidden">
                       <video
                         className="w-full h-full object-cover"
-                        poster={'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'}
                         controls
                         preload="metadata"
+                        playsInline
+                        src={testimonial.videoSrc}
                       >
-                        <source src={"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
-                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                         <Play className="w-12 h-12 text-[#FF3B3F]" />
                       </div>
                     </div>
