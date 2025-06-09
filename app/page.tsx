@@ -92,23 +92,23 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ydiiznojqcde9ryufacv",
     },
     {
-      title: "Product Launch Video",
-      views: "3.2M",
+      title: "Youtube Video Edit",
+      views: "300K",
       type: "Commercial",
       videoSrc:
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/bii8nwjhsw36derutjt9",
     },
     {
-      title: "Travel Vlog Highlights",
-      views: "1.1M",
-      type: "Vlog",
+      title: "Importace of Higher Education",
+      views: "700K",
+      type: "Educational Video",
       videoSrc:
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/bapg9xerb6yqazmgft4w",
     },
     {
-      title: "Music Video Edit",
-      views: "800K",
-      type: "Music",
+      title: "A documentry in rat race",
+      views: "458K",
+      type: "Documentry",
       videoSrc:
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/p1mokpvggvdpt5jizuvb",
     },
@@ -116,8 +116,8 @@ export default function DarkPortfolio() {
 
   const testimonials = [
     {
-      name: "Alex Chen",
-      role: "YouTuber (1M+ subscribers)",
+      name: "YourFitness",
+      role: "Instagram (26K Followers)",
       content:
         "Divyanshu's editing transformed my content completely. His attention to detail and quick turnaround time is unmatched.",
       rating: 5,
@@ -125,7 +125,7 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ruopsqy9nagzhejxglfh",
     },
     {
-      name: "Glow",
+      name: "Beatuty with me",
       role: "Brand Manager",
       content:
         "Working with Divyanshu has been incredible. He understands our vision instantly and delivers beyond expectations.",
@@ -134,7 +134,7 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/uf1qje8uuvmdqhqexuy5",
     },
     {
-      name: "Mike Johnson",
+      name: "Rahul Roy",
       role: "Content Creator",
       content:
         "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
@@ -143,8 +143,8 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/drdbaj3mbybo5low8ew9",
     },
     {
-      name: "Mike Johnson",
-      role: "Content Creator",
+      name: "Diksha Shrma",
+      role: "A Parlour Owner",
       content:
         "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
       rating: 5,
@@ -152,8 +152,8 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/ocqqhp2hnykkrgxej2hm",
     },
     {
-      name: "Mike Johnson",
-      role: "Content Creator",
+      name: "Rishab Jain",
+      role: "Hotel Owner",
       content:
         "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
       rating: 5,
@@ -161,8 +161,8 @@ export default function DarkPortfolio() {
         "https://res.cloudinary.com/det6nlhd8/video/upload/f_auto:video,q_auto/v1/dev-edits/uc6uq44dnah7drvrd4wf",
     },
     {
-      name: "Mike Johnson",
-      role: "Content Creator",
+      name: "Nikhil",
+      role: "Burger Singh",
       content:
         "Divyanshu brings stories to life with his exceptional editing skills. Professional, creative, and delivered on time.",
       rating: 5,
@@ -177,8 +177,8 @@ export default function DarkPortfolio() {
       <header className="fixed top-0 w-full bg-[#121212]/90 backdrop-blur-md z-50 border-b border-gray-800">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold">
-            <span className="text-white">Divyanshu Edits</span>
-            <span className="text-[#FF3B3F]">.</span>
+            <span className="text-white">Divyanshu </span>
+            <span className="text-[#FF3B3F]">Edits.</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -503,7 +503,7 @@ export default function DarkPortfolio() {
                   <div className="flex items-center space-x-3 md:space-x-4">
                     <Mail className="w-5 h-5 md:w-6 md:h-6 text-[#FF3B3F] flex-shrink-0" />
                     <span className="text-gray-300 text-sm md:text-base break-all">
-                      divyanshu.editor@gmail.com
+                      divyanshuedits@gmail.com
                     </span>
                   </div>
                   <div className="flex items-center space-x-3 md:space-x-4">
@@ -523,7 +523,7 @@ export default function DarkPortfolio() {
                       <Youtube className="w-4 h-4 md:w-5 md:h-5" />
                     </Link>
                     <Link
-                      href="#"
+                      href="https://www.instagram.com/divyanshuframes/"
                       className="p-2 md:p-3 bg-[#2a2a2a] text-gray-300 rounded-full hover:bg-[#FF3B3F] hover:text-white transition-all duration-300 hover:scale-110"
                     >
                       <Instagram className="w-4 h-4 md:w-5 md:h-5" />
@@ -594,8 +594,8 @@ export default function DarkPortfolio() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="text-2xl font-bold mb-4">
-              <span className="text-white">Divyanshu</span>
-              <span className="text-[#FF3B3F]">.</span>
+              <span className="text-white">Divyanshu </span>
+              <span className="text-[#FF3B3F]">Edits.</span>
             </div>
             <p className="text-gray-400 mb-6">
               Video Editor | Storyteller | Creative Professional
@@ -608,7 +608,7 @@ export default function DarkPortfolio() {
                 <Youtube className="w-6 h-6" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/divyanshuframes/"
                 className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
               >
                 <Instagram className="w-6 h-6" />
@@ -620,7 +620,7 @@ export default function DarkPortfolio() {
                 <Linkedin className="w-6 h-6" />
               </Link>
               <Link
-                href="#"
+                href="divyanshuedits@gmail.com"
                 className="text-gray-400 hover:text-[#FF3B3F] transition-colors duration-300"
               >
                 <Mail className="w-6 h-6" />
