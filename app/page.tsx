@@ -60,7 +60,7 @@ export default function DarkPortfolio() {
       color: "from-blue-500 to-purple-500",
     },
     { name: "CapCut", icon: "CC", color: "from-green-500 to-blue-500" },
-    { name: "Final Cut Pro", icon: "FC", color: "from-gray-500 to-gray-700" },
+    { name: "Filmora", icon: "FM", color: "from-gray-500 to-gray-700" },
     {
       name: "DaVinci Resolve",
       icon: "Da",
@@ -540,13 +540,18 @@ export default function DarkPortfolio() {
 
               <Card className="bg-[#2a2a2a] border-gray-700">
                 <CardContent className="p-4 md:p-6">
-                  <form className="space-y-4 md:space-y-6">
+                  <form
+                    className="space-y-4 md:space-y-6"
+                    action="https://formsubmit.co/divyanshuedits@gmail.com"
+                    method="POST"
+                  >
                     <div>
                       <label className="block text-sm font-medium mb-2 text-white">
                         Name
                       </label>
                       <Input
                         placeholder="Your full name"
+                        name="fullname"
                         className="bg-[#1a1a1a] border-gray-600 text-white placeholder-gray-400 focus:border-[#FF3B3F] focus:ring-[#FF3B3F] text-sm md:text-base"
                       />
                     </div>
@@ -556,6 +561,7 @@ export default function DarkPortfolio() {
                       </label>
                       <Input
                         type="email"
+                        name="email"
                         placeholder="your.email@example.com"
                         className="bg-[#1a1a1a] border-gray-600 text-white placeholder-gray-400 focus:border-[#FF3B3F] focus:ring-[#FF3B3F] text-sm md:text-base"
                       />
@@ -567,6 +573,7 @@ export default function DarkPortfolio() {
                       <Textarea
                         placeholder="Tell me about your project, timeline, and vision..."
                         rows={4}
+                        name="message"
                         className="bg-[#1a1a1a] border-gray-600 text-white placeholder-gray-400 focus:border-[#FF3B3F] focus:ring-[#FF3B3F] text-sm md:text-base resize-none"
                       />
                     </div>
