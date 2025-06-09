@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Divyanshu Edits",
   description: "Divyanshu Edits - A passionate video editor",
+    generator: 'v0.dev'
 };
 
 export default function RootLayout({
